@@ -1,7 +1,7 @@
 #pragma once
 //Ballに関する構造体
 typedef struct {
-	int   knd;		//種類
+	int   knd;		//種類 1 : 通常処理 ・ 2 : ブラックホール内処理		
 	bool  flag;		//フラグ
 	float x,		//Ball_X_座標
 		  y,		//Ball_Y_座標
