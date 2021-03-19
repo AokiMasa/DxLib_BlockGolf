@@ -103,6 +103,7 @@ void collision_bh() {
 
 //BlackHole‚Ì•`‰æ
 void draw_bh() {
+	//‰æ‘œ‚Ì‰ñ“](ƒ‰ƒWƒAƒ“’l)
 	p += 0.01;
 	if (p > 2 * M_PI)p = 0;
 	DrawRotaGraph((int)bh.x, (int)bh.y, 1.0,p, bhHandle, true);
