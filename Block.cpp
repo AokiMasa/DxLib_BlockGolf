@@ -139,6 +139,8 @@ void draw_block() {
 		if (blocks[i].flg) {
 			//画像の描画
 			DrawGraph((int)blocks[i].x, (int)blocks[i].y, blockHandle, true);
+
+			/*デバッグ用の表示*/
 			//各Blockの位置座標
 			DrawFormatString((int)blocks[i].x + (BLOCK_WIDTH / 4), (int)blocks[i].y + (BLOCK_HEIGHT / 8), GetColor(255, 0, 0), "X:%d\nY:%d\nHP:%d\nFLG:%d", (int)blocks[i].x, (int)blocks[i].y, blocks[i].hp, blocks[i].flg);
 		}

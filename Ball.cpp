@@ -22,6 +22,8 @@ void init_balls() {
 		balls[i].num   = 0;
 		balls[i].hp    = 9;
 		balls[i].angle = (float)angle;
+		balls[i].tmp   = 0;
+		balls[i].deg   = 0;
 		balls[i].flag  = false;
 		balls[i].bFlg  = true;
 		balls[i].knd   = 1;
@@ -31,11 +33,11 @@ void init_balls() {
 //ボールの発射間隔
 void shot_balls() {
 
-	GetMousePoint(&m_Xpos, &m_Ypos);														//マウス座標の取得	
+	GetMousePoint(&m_Xpos, &m_Ypos);				 //マウス座標の取得	
 	
 	if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - 16) {
-		angle = angle2(m_Xpos, m_Ypos);														//ラジアン値
-		deg = (int)-((float)angle * (180 / M_PI));											//度数	
+		angle = angle2(m_Xpos, m_Ypos);				 //ラジアン値
+		deg = (int)-((float)angle * (180 / M_PI));	 //度数	
 	}
 
 	for (int i = 0; i < MAX_BALLS; i++) {
@@ -96,9 +98,15 @@ void draw_ball() {
 
 	for (int i = 0; i < MAX_BALLS; i++) {
 		if (balls[i].bFlg && balls[i].knd != 3)DrawRotaGraph((int)balls[i].x, (int)balls[i].y, 1.0, 0.0, ballHandle, true);//DrawGraph((int)balls[i].x, (int)balls[i].y, ballHandle, true);
+
+		/*デバッグ用の表示*/
+		//各ボールの座標とHPの表示
 		if (balls[i].knd == 1)DrawFormatString((int)balls[i].x + 8, (int)balls[i].y - 18, GetColor(255, 255, 255), "X:%.1f\nY:%.1f\nHP:%d", balls[i].x, balls[i].y,balls[i].hp);
+		//マウス座標の表示
 		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 100, GetColor(255, 255, 255), "MX:%d\nMY:%d", m_Xpos,m_Ypos);
+		//ショットのラジアン値
 		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 60, GetColor(255, 255, 255), "ANGLE:%.2lf", angle);
+		//角度
 		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 40, GetColor(255, 255, 255), "DEG:%d", deg);			
 	}
 }

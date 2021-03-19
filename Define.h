@@ -25,14 +25,14 @@
 #define MAX_BLOCK_Y 15			//y方向の最大ブロック数
 
 /*ボール関係*/
-#define MAX_BALLS 30			//ボールの合計数
+#define MAX_BALLS 10			//ボールの合計数
 
 #define BALL_SPEED 2			//ボールのスピード
 #define BALL_SIZE 16			//ボールの大きさ
 #define BALL_SHOT_OFFSET 30		//ボールの発射間隔
 
 /*予測線関係*/
-#define MAX_SHOTLINE_POINT 20	//予測線の点の数
+#define MAX_SHOTLINE_POINT 40	//予測線の点の数
 #define SHOTLINE_OFFSET 32		//予測線の点を表示する間隔
 
 /*ステージ関係*/

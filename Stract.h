@@ -12,6 +12,7 @@ typedef struct {
 	float angle;	//Ball_角度
 	float spd_x;	//Ball_移動スピードX
 	float spd_y;	//Ball_移動スピードY
+	double tmp, deg;//ブラックホールと当たった時の各ボールの角度
 }Ball_t;
 
 //Blockに関する構造体
