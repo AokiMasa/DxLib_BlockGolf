@@ -75,3 +75,12 @@ GLOBAL void draw_sl();
 
 /*ブロックの配置*/
 GLOBAL void create_blocks();
+
+
+/*Effectの構造体データ*/
+GLOBAL Effect_t effect[MAX_BALLS];
+
+/*Effectの初期化*/
+GLOBAL void init_effect();
+/*Effectの描画*/
+GLOBAL void draw_effect();

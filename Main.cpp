@@ -45,6 +45,7 @@ public:
 			init_bh();
 			init_blocks();		
 			init_sl();
+			init_effect();
 			bCnt = 0;
 			slCnt = 0;
 
@@ -67,6 +68,8 @@ public:
 			move_balls();
 			collision_ball();
 			draw_ball();
+
+			draw_effect();
 
 			//Block.cpp
 			collision_block();

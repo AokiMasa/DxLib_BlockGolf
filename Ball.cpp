@@ -72,21 +72,37 @@ void collision_ball() {
 			balls[i].x = FIELD_WIDTH - (BALL_SIZE / 2);
 			balls[i].spd_x *= -1;
 			balls[i].hp -= 1;
+
+			effect[i].onActive = true;
+			effect[i].x = balls[i].x;
+			effect[i].y = balls[i].y;
 		}
 		if (balls[i].x <= 0 + (BALL_SIZE / 2)) {
 			balls[i].x = 0 + (BALL_SIZE / 2);
 			balls[i].spd_x *= -1;
 			balls[i].hp -= 1;
+
+			effect[i].onActive = true;
+			effect[i].x = balls[i].x;
+			effect[i].y = balls[i].y;
 		}
 		if (balls[i].y <= 0 + (BALL_SIZE / 2)) {
 			balls[i].y = 0 + (BALL_SIZE / 2);
 			balls[i].spd_y *= -1;
 			balls[i].hp -= 1;
+
+			effect[i].onActive = true;
+			effect[i].x = balls[i].x;
+			effect[i].y = balls[i].y;
 		}
 		if (balls[i].y >= FIELD_HEIGHT - (BALL_SIZE / 2)) {
 			balls[i].y = FIELD_HEIGHT - (BALL_SIZE / 2);
 			balls[i].spd_y *= -1; 
 			balls[i].hp -= 1;
+
+			effect[i].onActive = true;
+			effect[i].x = balls[i].x;
+			effect[i].y = balls[i].y;
 		}
 	}
 }

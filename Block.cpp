@@ -93,6 +93,10 @@ void collision_block() {
 					balls[j].spd_y *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//‰º–Ê‚Ì“–‚½‚è”»’è
 				if (balls[j].x > blocks[i].x && balls[j].x < blocks[i].x + BLOCK_WIDTH &&
@@ -101,6 +105,10 @@ void collision_block() {
 					balls[j].spd_y *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//¶–Ê‚Ì“–‚½‚è”»’è
 				if (balls[j].y > blocks[i].y && balls[j].y < blocks[i].y + BLOCK_HEIGHT &&
@@ -109,6 +117,10 @@ void collision_block() {
 					balls[j].spd_x *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//‰E–Ê‚Ì“–‚½‚è”»’è
 				if (balls[j].y > blocks[i].y && balls[j].y < blocks[i].y + BLOCK_HEIGHT &&
@@ -117,6 +129,10 @@ void collision_block() {
 					balls[j].spd_x *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 			}
 		}

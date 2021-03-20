@@ -32,7 +32,7 @@
 #define BALL_SHOT_OFFSET 30		//ボールの発射間隔
 
 /*予測線関係*/
-#define MAX_SHOTLINE_POINT 40	//予測線の点の数
+#define MAX_SHOTLINE_POINT 20	//予測線の点の数
 #define SHOTLINE_OFFSET 32		//予測線の点を表示する間隔
 
 /*ステージ関係*/

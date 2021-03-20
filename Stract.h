@@ -36,3 +36,11 @@ typedef struct {
 	float x;		//各予測線の玉のX座標
 	float y;		//各予測線の玉のY座標
 }ShotLine_t;
+
+//エフェクト
+typedef struct {
+	float x;		//Effect_X座標
+	float y;		//Effect_X座標
+	int cnt;		//カウンタ
+	bool onActive;	//表示フラグ
+}Effect_t;
