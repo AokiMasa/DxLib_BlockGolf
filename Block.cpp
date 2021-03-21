@@ -93,6 +93,11 @@ void collision_block() {
 					balls[j].spd_y *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					//エフェクト関係
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//下面の当たり判定
 				if (balls[j].x > blocks[i].x && balls[j].x < blocks[i].x + BLOCK_WIDTH &&
@@ -101,6 +106,11 @@ void collision_block() {
 					balls[j].spd_y *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					//エフェクト関係
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//左面の当たり判定
 				if (balls[j].y > blocks[i].y && balls[j].y < blocks[i].y + BLOCK_HEIGHT &&
@@ -109,6 +119,11 @@ void collision_block() {
 					balls[j].spd_x *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					//エフェクト関係
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 				//右面の当たり判定
 				if (balls[j].y > blocks[i].y && balls[j].y < blocks[i].y + BLOCK_HEIGHT &&
@@ -117,6 +132,11 @@ void collision_block() {
 					balls[j].spd_x *= -1;
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
+
+					//エフェクト関係
+					effect[j].onActive = true;
+					effect[j].x = balls[j].x;
+					effect[j].y = balls[j].y;
 				}
 			}
 		}
@@ -139,6 +159,8 @@ void draw_block() {
 		if (blocks[i].flg) {
 			//画像の描画
 			DrawGraph((int)blocks[i].x, (int)blocks[i].y, blockHandle, true);
+
+			/*デバッグ用の表示*/
 			//各Blockの位置座標
 			DrawFormatString((int)blocks[i].x + (BLOCK_WIDTH / 4), (int)blocks[i].y + (BLOCK_HEIGHT / 8), GetColor(255, 0, 0), "X:%d\nY:%d\nHP:%d\nFLG:%d", (int)blocks[i].x, (int)blocks[i].y, blocks[i].hp, blocks[i].flg);
 		}

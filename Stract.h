@@ -1,7 +1,7 @@
 #pragma once
 //Ballに関する構造体
 typedef struct {
-	int   knd;		//種類 1 : 通常処理 ・ 2 : ブラックホール内処理	
+	int   knd;		//種類 1 : 通常処理 　2 : ブラックホール内処理	　3 : ブラックホール内の中心の処理
 	int   num;      //ブラックホールに入った順番を記録する
 	int   hp;       //ボールの体力
 	bool  flag;		//Shotフラグ(触らない)
@@ -12,6 +12,7 @@ typedef struct {
 	float angle;	//Ball_角度
 	float spd_x;	//Ball_移動スピードX
 	float spd_y;	//Ball_移動スピードY
+	double tmp, deg;//ブラックホールと当たった時の各ボールの角度
 }Ball_t;
 
 //Blockに関する構造体
@@ -35,3 +36,11 @@ typedef struct {
 	float x;		//各予測線の玉のX座標
 	float y;		//各予測線の玉のY座標
 }ShotLine_t;
+
+//エフェクト
+typedef struct {
+	float x;		//Effect_X座標
+	float y;		//Effect_X座標
+	int cnt;		//カウンタ
+	bool onActive;	//表示フラグ
+}Effect_t;
