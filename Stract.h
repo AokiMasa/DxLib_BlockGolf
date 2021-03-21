@@ -1,7 +1,7 @@
 #pragma once
 //Ballに関する構造体
 typedef struct {
-	int   knd;		//種類 1 : 通常処理 ・ 2 : ブラックホール内処理	
+	int   knd;		//種類 1 : 通常処理 　2 : ブラックホール内処理	　3 : ブラックホール内の中心の処理
 	int   num;      //ブラックホールに入った順番を記録する
 	int   hp;       //ボールの体力
 	bool  flag;		//Shotフラグ(触らない)

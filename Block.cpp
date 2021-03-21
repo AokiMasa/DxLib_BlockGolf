@@ -94,6 +94,10 @@ void collision_block() {
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+					//エフェクト関係
+>>>>>>> Aoki
 					effect[j].onActive = true;
 					effect[j].x = balls[j].x;
 					effect[j].y = balls[j].y;
@@ -106,6 +110,10 @@ void collision_block() {
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+					//エフェクト関係
+>>>>>>> Aoki
 					effect[j].onActive = true;
 					effect[j].x = balls[j].x;
 					effect[j].y = balls[j].y;
@@ -118,6 +126,10 @@ void collision_block() {
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+					//エフェクト関係
+>>>>>>> Aoki
 					effect[j].onActive = true;
 					effect[j].x = balls[j].x;
 					effect[j].y = balls[j].y;
@@ -130,6 +142,10 @@ void collision_block() {
 					balls[j].hp -= 1;
 					blocks[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+					//エフェクト関係
+>>>>>>> Aoki
 					effect[j].onActive = true;
 					effect[j].x = balls[j].x;
 					effect[j].y = balls[j].y;

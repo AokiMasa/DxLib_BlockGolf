@@ -52,6 +52,15 @@ void move_bh() {
 		if ((fabsf((bh.x - balls[i].x)) < 0.25f && fabsf((bh.y - balls[i].y)) < 0.25) && balls[i].knd == 2) {
 			balls[i].x   = bh.x;
 			balls[i].y   = bh.y;
+<<<<<<< HEAD
+=======
+
+			//エフェクト関係
+			effect[i].onActive = true;
+			effect[i].x = balls[i].x;
+			effect[i].y = balls[i].y;
+
+>>>>>>> Aoki
 			balls[i].knd = 3;
 		}
 		else if (balls[i].knd == 3) {

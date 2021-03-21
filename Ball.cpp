@@ -73,6 +73,10 @@ void collision_ball() {
 			balls[i].spd_x *= -1;
 			balls[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+			//エフェクト関係
+>>>>>>> Aoki
 			effect[i].onActive = true;
 			effect[i].x = balls[i].x;
 			effect[i].y = balls[i].y;
@@ -82,6 +86,10 @@ void collision_ball() {
 			balls[i].spd_x *= -1;
 			balls[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+			//エフェクト関係
+>>>>>>> Aoki
 			effect[i].onActive = true;
 			effect[i].x = balls[i].x;
 			effect[i].y = balls[i].y;
@@ -91,6 +99,10 @@ void collision_ball() {
 			balls[i].spd_y *= -1;
 			balls[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+			//エフェクト関係
+>>>>>>> Aoki
 			effect[i].onActive = true;
 			effect[i].x = balls[i].x;
 			effect[i].y = balls[i].y;
@@ -100,6 +112,10 @@ void collision_ball() {
 			balls[i].spd_y *= -1; 
 			balls[i].hp -= 1;
 
+<<<<<<< HEAD
+=======
+			//エフェクト関係
+>>>>>>> Aoki
 			effect[i].onActive = true;
 			effect[i].x = balls[i].x;
 			effect[i].y = balls[i].y;
