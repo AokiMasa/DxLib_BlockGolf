@@ -25,7 +25,7 @@
 #define MAX_BLOCK_Y 15			//y方向の最大ブロック数
 
 /*ボール関係*/
-#define MAX_BALLS 30			//ボールの合計数
+#define MAX_BALLS 10			//ボールの合計数
 
 #define BALL_SPEED 2			//ボールのスピード
 #define BALL_SIZE 16			//ボールの大きさ

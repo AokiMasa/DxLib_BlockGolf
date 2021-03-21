@@ -119,6 +119,6 @@ void draw_bh() {
 	//ブラックホールの中心座標の表示
 	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 140, GetColor(255, 255, 255), "BH:%.1f\nBH:%.1f", bh.x, bh.y);
 	//各ボールのブラックホールと当たった時の角度、ラジアン値の表示
-	for (int i = 0; i < MAX_BALLS; i++)DrawFormatString(FIELD_WIDTH - 110, i * 50, GetColor(255, 255, 255), "r[%d]:%lf\nrad[%d]:%lf\ntmp[%d]:%lf\n", i, r[i], i, rad[i],i,balls[i].tmp);
+	//for (int i = 0; i < MAX_BALLS; i++)DrawFormatString(FIELD_WIDTH - 110, i * 50, GetColor(255, 255, 255), "r[%d]:%lf\nrad[%d]:%lf\ntmp[%d]:%lf\n", i, r[i], i, rad[i],i,balls[i].tmp);
 
 }

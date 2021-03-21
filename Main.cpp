@@ -45,6 +45,7 @@ public:
 			init_bh();
 			init_blocks();		
 			init_sl();
+			init_effect();
 			bCnt = 0;
 			slCnt = 0;
 
@@ -53,7 +54,7 @@ public:
 		case 1:			//タイトル
 
 			//押されたら移動(出来たら)
-			Game = 3;
+			Game = 2;
 			break;
 		case 2:			//ゲームスタート
 
@@ -67,6 +68,8 @@ public:
 			move_balls();
 			collision_ball();
 			draw_ball();
+
+			draw_effect();
 
 			//Block.cpp
 			collision_block();
@@ -97,6 +100,7 @@ public:
 			break;
 		}
 
+		/*デバッグ用の表示*/
 		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 160, GetColor(255, 255, 255), "STAGE:%d", Stage_Num + 1);
 		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 20, GetColor(255, 255, 255), "%.1f", mFps);
 	}

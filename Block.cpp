@@ -47,10 +47,10 @@ void init_blocks() {
 	
 	//ブロックのフラグを全部Falseにしてからブロックを生成
 	int a = 0;
-	for (int i = 0; i < MAX_BLOCK_Y; i++) {
-		for (int j = 0; j < MAX_BLOCK_X; j++) {
+	for (int i = 0; i < MAX_BLOCK_X; i++) {
+		for (int j = 0; j < MAX_BLOCK_Y; j++) {
 			blocks[a].flg = false;
-			//printfDx("a:%d\n", a);
+			//printfDx("b:%d  ", blocks[a].flg);
 			a++;
 		}
 	}
