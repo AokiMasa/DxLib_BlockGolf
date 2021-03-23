@@ -54,10 +54,12 @@ void move_sl() {
 //ShotLine‚Ì•`‰æ
 void draw_sl() {
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255-(i*10));
 		DrawRotaGraph((int)sl[i].x, (int)sl[i].y, 1.0, 0.0, slHandle, true);
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y - 8, GetColor(255, 255, 255), "I:%d",i);
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y + 8, GetColor(255, 255, 255), "X:%.1f\nY:%.1f", sl[i].x, sl[i].y);
-	}	
+	}
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255);
 
 	//DrawCircle(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 10, GetColor(0, 255, 100), true);
 	//DrawRotaGraph(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 1.0, 0.0, slHandle, true);

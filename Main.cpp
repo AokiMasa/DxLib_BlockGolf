@@ -12,7 +12,7 @@ class Fps {
 	int mCount;             //カウンタ
 	float mFps;             //fps
 	static const int N = 60;//平均を取るサンプル数
-	static const int FPS = 144;	//設定したFPS
+	static const int FPS = 60;	//設定したFPS
 
 public:
 	Fps() {
@@ -57,6 +57,9 @@ public:
 			Game = 2;
 			break;
 		case 2:			//ゲームスタート
+			//Block.cpp
+			collision_block();
+			draw_block();
 
 			//BlackHole.cpp
 			move_bh();
@@ -68,15 +71,10 @@ public:
 			move_balls();
 			collision_ball();
 			draw_ball();
-
-			draw_effect();
-
-			//Block.cpp
-			collision_block();
-			draw_block();
-			
 			bCnt++;
 
+			draw_effect();
+			
 		break;
 
 		case 3:			//予測線用のテスト

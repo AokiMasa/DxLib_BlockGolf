@@ -37,10 +37,18 @@ typedef struct {
 	float y;		//各予測線の玉のY座標
 }ShotLine_t;
 
-//エフェクト
+//ボールのエフェクト
 typedef struct {
 	float x;		//Effect_X座標
 	float y;		//Effect_X座標
 	int cnt;		//カウンタ
 	bool onActive;	//表示フラグ
 }Effect_t;
+
+//マウスカーソルの追従エフェクト
+typedef struct {
+	float x;		//m_Effect_X座標
+	float y;		//m_Effect_X座標
+	int cnt;		//カウンタ
+	bool onActive;	//表示フラグ
+}M_Effect_t;

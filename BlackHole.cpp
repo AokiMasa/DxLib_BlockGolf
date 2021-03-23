@@ -27,7 +27,7 @@ void move_bh() {
 		if (balls[i].knd == 2) {
 
 			//Šeƒ{[ƒ‹‚ÌŠp“x‚ð1‹‚Ã‚Â‘‚â‚·
-			balls[i].deg += 1;
+			balls[i].deg += 3;
 			//ˆêŽü‚µ‚½‚ç‚»‚ÌŠp“x‚ÅŽ~‚ß‚é
 			if (balls[i].deg >= 360 + balls[i].tmp)360 + balls[i].tmp;
 			//Šp“x‚ðƒ‰ƒWƒAƒ“’l‚É–ß‚·
@@ -110,7 +110,7 @@ void collision_bh() {
 //BlackHole‚Ì•`‰æ
 void draw_bh() {
 	//‰æ‘œ‚Ì‰ñ“](ƒ‰ƒWƒAƒ“’l)
-	p += 0.01;
+	p += 0.025;
 	if (p > 2 * M_PI)p = 0;
 	DrawRotaGraph((int)bh.x, (int)bh.y, 1.0,p, bhHandle, true);
 	//DrawCircle((int)bh.x, (int)bh.y, (int)bh.r, GetColor(0, 255, 0), true);

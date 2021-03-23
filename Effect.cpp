@@ -1,4 +1,5 @@
 #include"GV.h"
+
 int effectImage[8];
 int effectImage2[18];
 int effect_orders[15] = { 0,1,2,3,4,5,6,7,6,5,4,3,2,1,0 };					//エフェクトの描画の順番
@@ -17,17 +18,54 @@ void init_effect() {
 		effect[i].cnt = 0;
 		effect[i].onActive = false;
 	}
+	for (int i = 0; i < AFTIMAGENUM; i++) {
+		m_effect[i].cnt = 0;
+		m_effect[i].onActive = false;
+	}
 }
 
 //描画
 void draw_effect() {
+	int m_Xpos, m_Ypos;
+
+	GetMousePoint(&m_Xpos, &m_Ypos);
+
+	for (int i = 0; i < AFTIMAGENUM; i++) {
+		if (!m_effect[i].onActive && bCnt%2==0) {
+			m_effect[i].x = m_Xpos;
+			m_effect[i].y = m_Ypos;
+			m_effect[i].onActive = true;
+			break;
+		}
+	}
+
+	for (int i = 0; i < AFTIMAGENUM; i++) {
+
+		if (!m_effect[i].onActive)continue;
+
+		m_effect[i].cnt++;
+
+		if (m_effect[i].cnt >= effect_numOrder2) {
+			m_effect[i].cnt = 0;
+			m_effect[i].onActive = false;
+			continue;
+		}
+		int effect_type = effect_orders2[m_effect[i].cnt];
+
+		if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - 16) {
+			DrawRotaGraph(m_effect[i].x, m_effect[i].y, 1.0, 0.0, effectImage2[effect_type], true);
+		}
+	}
+
 	for (int i = 0; i < MAX_BALLS; i++) {
+
 		if (!effect[i].onActive)continue;
 
 		if (--effect_wait <= 0) {
 			effect[i].cnt++;
 			effect_wait = effect_speed;
 		}
+
 
 		switch (balls[i].knd)
 		{
