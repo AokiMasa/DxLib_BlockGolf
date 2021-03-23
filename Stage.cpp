@@ -2,21 +2,21 @@
 
 int block_map0[MAX_BLOCK_Y][MAX_BLOCK_X] =
 {
-	{0,1,1,0,1,0,1,0,1,1,0},
+	{1,1,1,1,1,0,1,1,1,1,1},
 	{1,0,1,1,0,0,0,1,1,0,1},
-	{0,1,1,0,1,0,1,0,1,1,0},
-	{0,0,0,0,0,0,0,0,0,0,0},
-	{0,1,1,1,1,0,1,1,1,1,0},
-	{0,1,1,1,1,0,1,1,1,1,0},
-	{0,0,0,0,0,0,0,0,0,0,0},
 	{1,1,1,1,1,0,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,1,1,1,1,1,1,1,1,1,1},
+	{1,0,1,1,1,0,1,1,1,0,1},
 	{1,1,1,1,1,0,1,1,1,1,1},
-	{0,0,0,0,0,0,0,0,0,0,0},
-	{0,1,1,1,1,0,1,1,1,1,0},
-	{0,1,1,1,1,0,1,1,1,1,0},
-	{0,0,0,0,0,0,0,0,0,0,0},
-	{1,0,0,0,0,0,0,0,0,0,1},
-	{0,0,0,0,0,0,0,0,0,0,0},
 };
 
 int block_map1[MAX_BLOCK_Y][MAX_BLOCK_X] =
@@ -125,7 +125,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
@@ -141,7 +141,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
@@ -157,7 +157,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
@@ -173,7 +173,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
@@ -189,7 +189,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
@@ -205,7 +205,7 @@ void create_blocks() {
 					blocks[count].x = BLOCK_WIDTH * i;
 					blocks[count].y = BLOCK_HEIGHT * j;
 					blocks[count].flg = true;
-					blocks[count].hp = 9;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
+					blocks[count].hp = 1;//ここはブロックのHP用のHPデータを使う・もしくはランダムでHPを割り当てる
 				}
 				count++;
 			}
