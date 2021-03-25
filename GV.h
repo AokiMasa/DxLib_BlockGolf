@@ -40,7 +40,7 @@ GLOBAL void collision_ball();
 /*ŠeBall‚Ì•`‰æ*/
 GLOBAL void draw_ball();
 /*ŠeBall‚Ì“®‚«*/
-GLOBAL void move_balls();	
+GLOBAL void move_balls();
 /*Ball‚ğˆê’èŠÔŠu‚ÅŒ‚‚Â*/
 GLOBAL void shot_balls();
 
@@ -84,3 +84,10 @@ GLOBAL Effect_t effect[MAX_BALLS];
 GLOBAL void init_effect();
 /*Effect‚Ì•`‰æ*/
 GLOBAL void draw_effect();
+
+/*Score‚Ì‰Šú‰»*/
+GLOBAL void init_score();
+/*Score‚Ì•`‰æ*/
+GLOBAL void draw_score();
+/*Score‚Ì‰ÁZˆ—*/
+GLOBAL void Add_Point();

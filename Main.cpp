@@ -43,9 +43,10 @@ public:
 
 			init_balls();
 			init_bh();
-			init_blocks();		
+			init_blocks();
 			init_sl();
 			init_effect();
+			init_score();
 			bCnt = 0;
 			slCnt = 0;
 
@@ -74,10 +75,13 @@ public:
 			//Block.cpp
 			collision_block();
 			draw_block();
-			
+
+			//Score.cpp
+			draw_score();
+
 			bCnt++;
 
-		break;
+			break;
 
 		case 3:			//予測線用のテスト
 
@@ -87,7 +91,7 @@ public:
 
 			slCnt++;
 			//slCnt = (slCnt + 1) % SHOTLINE_OFFSET;
-		break;
+			break;
 
 		case 4:			//クリア、リザルト画面
 			Game = 0;
@@ -116,7 +120,7 @@ public:
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-	
+
 	// ウインドウモードで起動
 	ChangeWindowMode(TRUE);
 	// ウインドウのサイズを手動ではできず、且つウインドウのサイズに合わせて拡大もしないようにする
@@ -143,7 +147,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	InitGraph();
 
 	// ＤＸライブラリ使用の終了処理
-	DxLib_End();					
+	DxLib_End();
 
 	return 0;						// ソフトの終了 
 }
