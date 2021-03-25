@@ -40,7 +40,7 @@ GLOBAL void collision_ball();
 /*各Ballの描画*/
 GLOBAL void draw_ball();
 /*各Ballの動き*/
-GLOBAL void move_balls();
+GLOBAL void move_balls();	
 /*Ballを一定間隔で撃つ*/
 GLOBAL void shot_balls();
 
@@ -79,11 +79,13 @@ GLOBAL void create_blocks();
 
 /*Effectの構造体データ*/
 GLOBAL Effect_t effect[MAX_BALLS];
+GLOBAL M_Effect_t m_effect[AFTIMAGENUM];
 
 /*Effectの初期化*/
 GLOBAL void init_effect();
 /*Effectの描画*/
 GLOBAL void draw_effect();
+
 
 /*Scoreの初期化*/
 GLOBAL void init_score();

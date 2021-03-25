@@ -12,7 +12,7 @@ class Fps {
 	int mCount;             //カウンタ
 	float mFps;             //fps
 	static const int N = 60;//平均を取るサンプル数
-	static const int FPS = 144;	//設定したFPS
+	static const int FPS = 60;	//設定したFPS
 
 public:
 	Fps() {
@@ -43,7 +43,7 @@ public:
 
 			init_balls();
 			init_bh();
-			init_blocks();
+			init_blocks();		
 			init_sl();
 			init_effect();
 			init_score();
@@ -58,6 +58,9 @@ public:
 			Game = 2;
 			break;
 		case 2:			//ゲームスタート
+			//Block.cpp
+			collision_block();
+			draw_block();
 
 			//BlackHole.cpp
 			move_bh();
@@ -69,19 +72,14 @@ public:
 			move_balls();
 			collision_ball();
 			draw_ball();
-
-			draw_effect();
-
-			//Block.cpp
-			collision_block();
-			draw_block();
+			bCnt++;
 
 			//Score.cpp
 			draw_score();
 
-			bCnt++;
-
-			break;
+			draw_effect();
+			
+		break;
 
 		case 3:			//予測線用のテスト
 
@@ -91,7 +89,7 @@ public:
 
 			slCnt++;
 			//slCnt = (slCnt + 1) % SHOTLINE_OFFSET;
-			break;
+		break;
 
 		case 4:			//クリア、リザルト画面
 			Game = 0;
@@ -120,7 +118,7 @@ public:
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-
+	
 	// ウインドウモードで起動
 	ChangeWindowMode(TRUE);
 	// ウインドウのサイズを手動ではできず、且つウインドウのサイズに合わせて拡大もしないようにする
@@ -147,7 +145,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	InitGraph();
 
 	// ＤＸライブラリ使用の終了処理
-	DxLib_End();
+	DxLib_End();					
 
 	return 0;						// ソフトの終了 
 }
