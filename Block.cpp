@@ -56,7 +56,7 @@ void init_blocks() {
 	}
 	
 
-	blockHandle = LoadGraph("./src/Block.jpg");
+	blockHandle = LoadGraph("./src/Block2.png");//変更箇所
 
 	int x, y;
 	GetGraphSize(blockHandle, &x, &y);
@@ -162,7 +162,7 @@ void draw_block() {
 
 			/*デバッグ用の表示*/
 			//各Blockの位置座標
-			DrawFormatString((int)blocks[i].x + (BLOCK_WIDTH / 4), (int)blocks[i].y + (BLOCK_HEIGHT / 8), GetColor(255, 0, 0), "X:%d\nY:%d\nHP:%d\nFLG:%d", (int)blocks[i].x, (int)blocks[i].y, blocks[i].hp, blocks[i].flg);
+			//DrawFormatString((int)blocks[i].x + (BLOCK_WIDTH / 4), (int)blocks[i].y + (BLOCK_HEIGHT / 8), GetColor(255, 0, 0), "X:%d\nY:%d\nHP:%d\nFLG:%d", (int)blocks[i].x, (int)blocks[i].y, blocks[i].hp, blocks[i].flg);
 		}
 	}
 }

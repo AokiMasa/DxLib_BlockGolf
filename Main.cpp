@@ -77,6 +77,7 @@ public:
 			//Score.cpp
 			draw_score();
 
+			//Effect.cpp
 			draw_effect();
 			
 		break;
@@ -103,8 +104,8 @@ public:
 		}
 
 		/*デバッグ用の表示*/
-		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 160, GetColor(255, 255, 255), "STAGE:%d", Stage_Num + 1);
-		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 20, GetColor(255, 255, 255), "%.1f", mFps);
+		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 160, GetColor(0, 0, 255), "STAGE:%d", Stage_Num + 1);
+		DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 20, GetColor(0, 0, 255), "%.1f", mFps);
 	}
 
 	void Wait() {

@@ -6,7 +6,7 @@ int inCnt;				//ボールがブラックホールに入った数
 double p;				//ブラックホールの回転の速さ
 double rad[MAX_BALLS];	//ブラックホールと当たった時の各ボールのラジアン値
 double r[MAX_BALLS];	//半径
-bool ScoreFlg = false;   //スコア加算フラグ
+bool ScoreFlg = false;  //スコア加算フラグ
 
 //BlackHoleの初期化
 void init_bh() {
@@ -129,7 +129,7 @@ void draw_bh() {
 
 	/*デバッグ用の表示*/
 	//ブラックホールの中心座標の表示
-	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 140, GetColor(255, 255, 255), "BH:%.1f\nBH:%.1f", bh.x, bh.y);
+	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 140, GetColor(0, 0, 255), "BH:%.1f\nBH:%.1f", bh.x, bh.y);
 	//各ボールのブラックホールと当たった時の角度、ラジアン値の表示
 	//for (int i = 0; i < MAX_BALLS; i++)DrawFormatString(FIELD_WIDTH - 110, i * 50, GetColor(255, 255, 255), "r[%d]:%lf\nrad[%d]:%lf\ntmp[%d]:%lf\n", i, r[i], i, rad[i],i,balls[i].tmp);
 

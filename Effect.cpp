@@ -90,7 +90,7 @@ void draw_effect() {
 				continue;
 			}
 			int effect_type = effect_orders2[effect[i].cnt];
-			if (balls[i].bFlg && balls[i].knd == 3)DrawRotaGraph(effect[i].x, effect[i].y, 1.0, 0.0, effectImage2[effect_type], true);
+			//if (balls[i].bFlg && balls[i].knd == 3)DrawRotaGraph(effect[i].x, effect[i].y, 1.0, 0.0, effectImage2[effect_type], true);
 			break;
 		}
 		default:

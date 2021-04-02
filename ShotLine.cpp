@@ -12,7 +12,7 @@ void init_sl() {
 
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
 		sl[i].x = FIELD_WIDTH / 2;
-		sl[i].y = FIELD_HEIGHT - 16;
+		sl[i].y = FIELD_HEIGHT - BALL_SHOT_POS_OFFSET;//変更箇所
 	}
 }
 
@@ -38,7 +38,7 @@ void move_sl() {
 		//スタート座標からマウスのX座標の角度に向かってiのSHOTLINE_OFFSETの幅でslCnt分移動する             
 		sl[i].x = (FIELD_WIDTH / 2) + (float)cos(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
 		//スタート座標からマウスのY座標の角度に向かってiのSHOTLINE_OFFSETの幅でslCnt分移動する 
-		sl[i].y = (FIELD_HEIGHT - 16) + (float)sin(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
+		sl[i].y = (FIELD_HEIGHT - BALL_SHOT_POS_OFFSET) + (float)sin(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
 
 		//右オーバーの場合
 		if (sl[i].x >= FIELD_WIDTH - (BALL_SIZE / 2)) {
@@ -63,5 +63,5 @@ void draw_sl() {
 
 	//DrawCircle(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 10, GetColor(0, 255, 100), true);
 	//DrawRotaGraph(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 1.0, 0.0, slHandle, true);
-	DrawRotaGraph((FIELD_WIDTH / 2), (FIELD_HEIGHT - 16), 1.0, aa + M_PI / 2, slpHandle, true);
+	DrawRotaGraph((FIELD_WIDTH / 2), (FIELD_HEIGHT - 19), 1.0, aa + M_PI / 2, slpHandle, true);
 }

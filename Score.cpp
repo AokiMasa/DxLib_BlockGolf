@@ -3,11 +3,11 @@ int Score = 0;
 //èâä˙âª
 void init_score() {
 	Score = 0;
-	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 180, GetColor(255, 255, 255), "SCORE:%d", Score);
+	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 180, GetColor(0, 0, 255), "SCORE:%d", Score);
 }
 
 void draw_score() {
-	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 180, GetColor(255, 255, 255), "SCORE:%d", Score);
+	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 180, GetColor(0, 0, 255), "SCORE:%d", Score);
 }
 
 
