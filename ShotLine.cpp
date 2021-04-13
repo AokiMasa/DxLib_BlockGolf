@@ -12,7 +12,7 @@ void init_sl() {
 
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
 		sl[i].x = FIELD_WIDTH / 2;
-		sl[i].y = FIELD_HEIGHT - 16;
+		sl[i].y = FIELD_HEIGHT - BALL_SHOT_POS_OFFSET;
 	}
 }
 
@@ -22,7 +22,7 @@ void move_sl() {
 	
 	GetMousePoint(&m_Xpos, &m_Ypos);
 
-	if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - 16) {
+	if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - BALL_SHOT_POS_OFFSET) {
 		aa = angle2(m_Xpos, m_Ypos);
 	}
 
@@ -38,7 +38,7 @@ void move_sl() {
 		//スタート座標からマウスのX座標の角度に向かってiのSHOTLINE_OFFSETの幅でslCnt分移動する             
 		sl[i].x = (FIELD_WIDTH / 2) + (float)cos(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
 		//スタート座標からマウスのY座標の角度に向かってiのSHOTLINE_OFFSETの幅でslCnt分移動する 
-		sl[i].y = (FIELD_HEIGHT - 16) + (float)sin(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
+		sl[i].y = (FIELD_HEIGHT - BALL_SHOT_POS_OFFSET) + (float)sin(aa) * ((i * SHOTLINE_OFFSET) + slCnt % SHOTLINE_OFFSET);
 
 		//右オーバーの場合
 		if (sl[i].x >= FIELD_WIDTH - (BALL_SIZE / 2)) {
@@ -53,13 +53,19 @@ void move_sl() {
 
 //ShotLineの描画
 void draw_sl() {
+	int m = GetMouseInput();	//マウスの入力状態
+
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
-		DrawRotaGraph((int)sl[i].x, (int)sl[i].y, 1.0, 0.0, slHandle, true);
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255-(i*10));
+		if (m & MOUSE_INPUT_LEFT) {
+			DrawRotaGraph((int)sl[i].x, (int)sl[i].y, 1.0, 0.0, slHandle, true);
+		}
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y - 8, GetColor(255, 255, 255), "I:%d",i);
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y + 8, GetColor(255, 255, 255), "X:%.1f\nY:%.1f", sl[i].x, sl[i].y);
-	}	
+	}
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255);
 
 	//DrawCircle(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 10, GetColor(0, 255, 100), true);
 	//DrawRotaGraph(FIELD_WIDTH / 2, FIELD_HEIGHT - 16, 1.0, 0.0, slHandle, true);
-	DrawRotaGraph((FIELD_WIDTH / 2), (FIELD_HEIGHT - 16), 1.0, aa + M_PI / 2, slpHandle, true);
+	DrawRotaGraph((FIELD_WIDTH / 2), (FIELD_HEIGHT - 19), 1.0, aa + M_PI / 2, slpHandle, true);
 }
