@@ -12,7 +12,11 @@ void init_sl() {
 
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
 		sl[i].x = FIELD_WIDTH / 2;
+<<<<<<< HEAD
 		sl[i].y = FIELD_HEIGHT - BALL_SHOT_POS_OFFSET;//変更箇所
+=======
+		sl[i].y = FIELD_HEIGHT - BALL_SHOT_POS_OFFSET;
+>>>>>>> Aoki
 	}
 }
 
@@ -22,7 +26,7 @@ void move_sl() {
 	
 	GetMousePoint(&m_Xpos, &m_Ypos);
 
-	if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - 16) {
+	if (m_Xpos >= 0 && m_Xpos <= FIELD_WIDTH && m_Ypos >= 0 && m_Ypos <= FIELD_HEIGHT - BALL_SHOT_POS_OFFSET) {
 		aa = angle2(m_Xpos, m_Ypos);
 	}
 
@@ -53,9 +57,17 @@ void move_sl() {
 
 //ShotLineの描画
 void draw_sl() {
+	int m = GetMouseInput();	//マウスの入力状態
+
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255-(i*10));
+<<<<<<< HEAD
 		DrawRotaGraph((int)sl[i].x, (int)sl[i].y, 1.0, 0.0, slHandle, true);
+=======
+		if (m & MOUSE_INPUT_LEFT) {
+			DrawRotaGraph((int)sl[i].x, (int)sl[i].y, 1.0, 0.0, slHandle, true);
+		}
+>>>>>>> Aoki
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y - 8, GetColor(255, 255, 255), "I:%d",i);
 		//DrawFormatString((int)sl[i].x + 8, (int)sl[i].y + 8, GetColor(255, 255, 255), "X:%.1f\nY:%.1f", sl[i].x, sl[i].y);
 	}
