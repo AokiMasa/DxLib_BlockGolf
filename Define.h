@@ -41,4 +41,9 @@
 #define MAX_STAGE 5             //ステージ総数
 
 /*エフェクト関係*/
+<<<<<<< HEAD
 #define AFTIMAGENUM	30			// 残像データの数
+=======
+#define AFTIMAGENUM1 90			//effect残像データの数
+#define AFTIMAGENUM2 30			//m_effect残像データの数
+>>>>>>> Aoki

@@ -7,8 +7,8 @@ double aa = -1.57;  //‰ŠúŒÊ“x
 
 //‰Šú‰»
 void init_sl() {
-	slHandle = LoadGraph("./src/Ball.png");
-	slpHandle = LoadGraph("./src/Player1.png");
+	slHandle = loadFiles[3];
+	slpHandle = loadFiles[4];
 
 	for (int i = 0; i < MAX_SHOTLINE_POINT; i++) {
 		sl[i].x = FIELD_WIDTH / 2;

@@ -11,12 +11,12 @@ bool ScoreFlg = false;  //スコア加算フラグ
 //BlackHoleの初期化
 void init_bh() {
 	p = 0;
-	bhHandle = LoadGraph("./src/BlackHole3.png");
+	bhHandle = loadFiles[2];
 	bh.x = FIELD_WIDTH / 2;
 	bh.y = 64;
 	bh.r = 32;	
 	for (int i = 0; i < MAX_BALLS; i++) {
-		r[i]   = 32;
+		r[i]   = 32 + BALL_SIZE / 4;
 		rad[i] = 0;
 	}
 }
@@ -56,9 +56,9 @@ void move_bh() {
 			balls[i].y   = bh.y;
 
 			//エフェクト関係
-			effect[i].onActive = true;
-			effect[i].x = balls[i].x;
-			effect[i].y = balls[i].y;
+			//effect[i].onActive = true;
+			//effect[i].x = balls[i].x;
+			//effect[i].y = balls[i].y;
 
 			balls[i].knd = 3;
 		}
