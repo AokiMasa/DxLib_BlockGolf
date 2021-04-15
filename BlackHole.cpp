@@ -1,20 +1,22 @@
 #include "GV.h"
 
 int bhHandle;			//画像
+
 int inCnt;				//ボールがブラックホールに入った数
 double p;				//ブラックホールの回転の速さ
 double rad[MAX_BALLS];	//ブラックホールと当たった時の各ボールのラジアン値
 double r[MAX_BALLS];	//半径
+bool ScoreFlg = false;  //スコア加算フラグ
 
 //BlackHoleの初期化
 void init_bh() {
 	p = 0;
-	bhHandle = LoadGraph("./src/BlackHole3.png");
+	bhHandle = loadFiles[2];
 	bh.x = FIELD_WIDTH / 2;
 	bh.y = 64;
 	bh.r = 32;	
 	for (int i = 0; i < MAX_BALLS; i++) {
-		r[i]   = 32;
+		r[i]   = 32 + BALL_SIZE / 4;
 		rad[i] = 0;
 	}
 }
@@ -27,7 +29,7 @@ void move_bh() {
 		if (balls[i].knd == 2) {
 
 			//各ボールの角度を1°づつ増やす
-			balls[i].deg += 1;
+			balls[i].deg += 3;
 			//一周したらその角度で止める
 			if (balls[i].deg >= 360 + balls[i].tmp)360 + balls[i].tmp;
 			//角度をラジアン値に戻す
@@ -54,14 +56,18 @@ void move_bh() {
 			balls[i].y   = bh.y;
 
 			//エフェクト関係
-			effect[i].onActive = true;
-			effect[i].x = balls[i].x;
-			effect[i].y = balls[i].y;
+			//effect[i].onActive = true;
+			//effect[i].x = balls[i].x;
+			//effect[i].y = balls[i].y;
 
 			balls[i].knd = 3;
 		}
 		else if (balls[i].knd == 3) {
 			balls[i].num = inCnt;
+
+			//スコア加算フラグを真にする
+			//ScoreFlg = true;
+
 			inCnt++;
 
 			//ボールがMAX_BALLS分入ったらGameを切り替える
@@ -92,6 +98,12 @@ void collision_bh() {
 
 			balls[i].tmp = balls[i].deg;
 			//printfDx("I:%d\ndeg:%lf\nrad:%lf\n", i,balls[i].tmp,rad);
+						//スコアフラグ切り替え
+			if (/*ScoreFlg &&*/ inCnt++) {
+				//Scoreポイントを加算
+				Add_Point();
+				ScoreFlg = false;
+			}
 		}
 
 		/*
@@ -110,14 +122,14 @@ void collision_bh() {
 //BlackHoleの描画
 void draw_bh() {
 	//画像の回転(ラジアン値)
-	p += 0.01;
+	p += 0.025;
 	if (p > 2 * M_PI)p = 0;
 	DrawRotaGraph((int)bh.x, (int)bh.y, 1.0,p, bhHandle, true);
 	//DrawCircle((int)bh.x, (int)bh.y, (int)bh.r, GetColor(0, 255, 0), true);
 
 	/*デバッグ用の表示*/
 	//ブラックホールの中心座標の表示
-	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 140, GetColor(255, 255, 255), "BH:%.1f\nBH:%.1f", bh.x, bh.y);
+	DrawFormatString(FIELD_WIDTH - 110, FIELD_HEIGHT - 140, GetColor(0, 0, 255), "BH:%.1f\nBH:%.1f", bh.x, bh.y);
 	//各ボールのブラックホールと当たった時の角度、ラジアン値の表示
 	//for (int i = 0; i < MAX_BALLS; i++)DrawFormatString(FIELD_WIDTH - 110, i * 50, GetColor(255, 255, 255), "r[%d]:%lf\nrad[%d]:%lf\ntmp[%d]:%lf\n", i, r[i], i, rad[i],i,balls[i].tmp);
 
